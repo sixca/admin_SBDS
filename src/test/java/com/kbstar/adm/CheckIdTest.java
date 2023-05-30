@@ -18,7 +18,7 @@ class CheckIdTest {
 	void contextLoads() throws Exception {
 			int result = 0;
 			Adm adm = null;
-			adm = service.get("ad123");
+			adm = service.get("ad0529");
 			if(adm != null){
 				result=1;
 			}

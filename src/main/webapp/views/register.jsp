@@ -28,14 +28,15 @@
                     url:'/checkid',
                     data:{adminId:txt_id},    //키값 adminId에 txt_id값 전송
                     success:function (result){
-                        if(result == 0 || result =="0"){    //test에서는 중복 시 '1', 사용가능 시 '0'을 result값으로 잘 출력되지만, 아이디중복체크 기능은 작동안하는 상황.
+                        // console.log(result);
+                        // console.log(txt_id);
+                        if(result == 0){    //test에서는 중복 시 '1', 사용가능 시 '0'을 result값으로 잘 출력되지만, 아이디중복체크 기능은 작동안하는 상황.
                             $('#idspan').text('사용 가능합니다.');
                             $('#idspan').css('color', 'blue');
                             // $('#pwd').focus();  // pwd이름의 인풋태그로 포커스 (커서 옮기기)
                         }else{
                             $('#idspan').text('중복된 ID입니다.')
                             $('#idspan').css('color', 'red');
-
                         }
                     }
                 });
@@ -111,7 +112,7 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input name="adminId" id="adminId" type="text" class="validate">
+                                    <input name="adminId" id="adminId" type="text">
                                     <label for="adminId">ID</label>
                                     <span id="idspan"></span>
                                 </div>

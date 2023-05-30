@@ -280,7 +280,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/empty" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> 고객 관리</a>
+                    <a href="/member/all" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> 고객 관리</a>
                 </li>
                 <li>
                     <a href="/empty" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> 간병인 관리</a>

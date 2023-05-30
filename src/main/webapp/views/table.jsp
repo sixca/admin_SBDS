@@ -8,11 +8,8 @@
             <li><a href="#">Tables</a></li>
             <li class="active">Data</li>
         </ol>
-
     </div>
-
     <div id="page-inner">
-
         <div class="row">
             <div class="col-md-12">
                 <!-- Advanced Tables -->
