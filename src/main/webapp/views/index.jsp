@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection"/>
     <!-- Bootstrap Styles-->
     <link href="/css/bootstrap.css" rel="stylesheet"/>
-<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--%>
+    <%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- FontAwesome Styles-->
@@ -23,6 +23,11 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="/js/Lightweight-Chart/cssCharts.css">
+
+    <%--간병인 all--%>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
 
 </head>
 
@@ -283,7 +288,7 @@
                     <a href="/member/all" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> 고객 관리</a>
                 </li>
                 <li>
-                    <a href="/empty" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> 간병인 관리</a>
+                    <a href="/mate/all" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> 간병인 관리</a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> 상품 관리<span
@@ -325,7 +330,7 @@
                             <a href="#"> 공시사항 관리</a>
                         </li>
                         <li>
-                            <a href="#"> 후기 관리</a>
+                            <a href="/matereview/all"> 후기 관리</a>
                         </li>
                     </ul>
                 </li>

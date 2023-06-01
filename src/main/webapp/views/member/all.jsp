@@ -33,7 +33,7 @@
                                 <tbody>
                                 <c:forEach var="obj" items="${mlist}">
                                     <tr class="odd gradeX">
-                                        <td class="center"><img class="small_img" src="/uimg/${obj.img}"></td>
+                                        <td class="center"><img class="small_img" src="/uimg/${obj.img}" style="border-radius: 50%;"></td>
                                         <td class="center"><a href="/member/detail?id=${obj.id}">${obj.id}</a></td>
                                         <td class="center">${obj.email}</td>
                                         <td class="center">${obj.name}</td>

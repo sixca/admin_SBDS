@@ -30,12 +30,17 @@
                     success:function (result){
                         // console.log(result);
                         // console.log(txt_id);
-                        if(result == 0){    //test에서는 중복 시 '1', 사용가능 시 '0'을 result값으로 잘 출력되지만, 아이디중복체크 기능은 작동안하는 상황.
+                        if(result == 0){
                             $('#idspan').text('사용 가능합니다.');
                             $('#idspan').css('color', 'blue');
                             // $('#pwd').focus();  // pwd이름의 인풋태그로 포커스 (커서 옮기기)
-                        }else{
+                        }
+                        if(result == 1){
                             $('#idspan').text('중복된 ID입니다.')
+                            $('#idspan').css('color', 'red');
+                        }
+                        if(result == 2){
+                            $('#idspan').text('ID는 10자리를 초과할 수 없습니다.')
                             $('#idspan').css('color', 'red');
                         }
                     }

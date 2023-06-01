@@ -2,29 +2,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
-    let member_detail={
+    let mate_detail={
         init: function (){
             $('#update_btn').click(function(){
-                member_detail.send();
+                mate_detail.send();
             });
             $('#delete_btn').click(function(){
                 var c = confirm("삭제 하시겠습니까?");
                 if(c == true){
-                    location.href="/member/deleteimpl?id=${memberinfo.id}";
+                    location.href="/mate/deleteimpl?id=${mateinfo.id}";
                 }
             });
         },
         send: function(){
             $('#detail_form').attr({
                 method:'post',
-                action:'/member/updateimpl',
+                action:'/mate/updateimpl',
                 enctype: 'multipart/form-data'   // imgname <-> img파일
             });
             $('#detail_form').submit();
         }
     };
     $(function(){
-        member_detail.init();
+        mate_detail.init();
     });
 </script>
 
@@ -35,11 +35,11 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="/uimg/${memberinfo.img}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110" style="border-radius: 50%;">
+                            <img src="/uimg/${mateinfo.img}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110" style="border-radius: 50%;">
                             <div class="mt-3">
-                                <h4>${memberinfo.name}</h4>
-                                <p class="text-secondary mb-1">${memberinfo.email}</p>
-                                <p class="text-muted font-size-sm">${memberinfo.birth}</p>
+                                <h4>${mateinfo.name}</h4>
+                                <p class="text-secondary mb-1">${mateinfo.email}</p>
+                                <p class="text-muted font-size-sm">${mateinfo.area}</p>
                                 <button class="btn btn-outline-primary">Message</button>
                             </div>
                         </div>
@@ -73,16 +73,16 @@
                 <div class="card">
                     <div class="card-body">
                         <form id="detail_form">
-                            <input type="hidden" name="id" value="${memberinfo.id}">
-                            <input type="hidden" name="img" value="${memberinfo.img}">
-                            <input type="hidden" name="password" value="${memberinfo.password}">
+                            <input type="hidden" name="id" value="${mateinfo.id}">
+                            <input type="hidden" name="img" value="${mateinfo.img}">
+                            <input type="hidden" name="password" value="${mateinfo.password}">
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" name="name" class="form-control" value="${memberinfo.name}">
+                                    <input type="text" name="name" class="form-control" value="${mateinfo.name}">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -90,7 +90,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" name="email" class="form-control" value="${memberinfo.email}">
+                                    <input type="text" name="email" class="form-control" value="${mateinfo.email}">
                                 </div>
                             </div>
 <%--                            <div class="row mb-3">--%>
@@ -103,26 +103,26 @@
 <%--                            </div>--%>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">BirthDay</h6>
+                                    <h6 class="mb-0">지역</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" name="birth" class="form-control" value="${memberinfo.birth}">
+                                    <input type="text" name="area" class="form-control" value="${mateinfo.area}">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Tel</h6>
+                                    <h6 class="mb-0">경력(년차)</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" name="tel" class="form-control" value="${memberinfo.tel}">
+                                    <input type="text" name="jobPeriod" class="form-control" value="${mateinfo.jobPeriod}">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Address</h6>
+                                    <h6 class="mb-0">자격</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" name="addr" class="form-control" value="${memberinfo.addr}">
+                                    <input type="text" name="license" class="form-control" value="${mateinfo.license}">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -131,8 +131,8 @@
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <select name="valid" class="form-control">
-                                        <option value="Y" ${memberinfo.valid == 'Y' ? 'selected' : ''}>Y</option>
-                                        <option value="N" ${memberinfo.valid == 'N' ? 'selected' : ''}>N</option>
+                                        <option value="Y" ${mateinfo.valid == 'Y' ? 'selected' : ''}>Y</option>
+                                        <option value="N" ${mateinfo.valid == 'N' ? 'selected' : ''}>N</option>
                                     </select>
                                 </div>
                             </div>

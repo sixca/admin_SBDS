@@ -31,29 +31,29 @@ public class MemberController {
 
     @Value("${uploadimgdir}")
     String imgdir;
-
-    @RequestMapping("/add")
-    public String add(Model model){
-        model.addAttribute("center", dir+"add");
-         return "index";
-        }
-
-    @RequestMapping("/addimpl")
-    public String addimpl(Model model, @Validated Member member, Errors errors) throws Exception {   //member에 문제가 생기면, errors 저장. validation
-       if(errors.hasErrors()){
-           List<ObjectError> es = errors.getAllErrors();    //Member에 담아둔(DefaultMessage) 어노테이션과 message
-           String msg ="";
-           for(ObjectError e:es){
-               msg += "<h4>";
-               msg += e.getDefaultMessage();
-               msg += "</h4>";
-           }
-           throw new Exception(msg);
-       }
-       member.setPassword(encoder.encode(member.getPassword()));
-       memberService.register(member);  // DB에 짚어 넣고
-       return "redirect:/member/all";
-    }
+//
+//    @RequestMapping("/add")
+//    public String add(Model model){
+//        model.addAttribute("center", dir+"add");
+//         return "index";
+//        }
+//
+//    @RequestMapping("/addimpl")
+//    public String addimpl(Model model, @Validated Member member, Errors errors) throws Exception {   //member에 문제가 생기면, errors 저장. validation
+//       if(errors.hasErrors()){
+//           List<ObjectError> es = errors.getAllErrors();    //Member에 담아둔(DefaultMessage) 어노테이션과 message
+//           String msg ="";
+//           for(ObjectError e:es){
+//               msg += "<h4>";
+//               msg += e.getDefaultMessage();
+//               msg += "</h4>";
+//           }
+//           throw new Exception(msg);
+//       }
+//       member.setPassword(encoder.encode(member.getPassword()));
+//       memberService.register(member);  // DB에 짚어 넣고
+//       return "redirect:/member/all";
+//    }
 
     @RequestMapping("/all")
     public String all(Model model) throws Exception {

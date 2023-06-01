@@ -8,9 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -127,8 +131,18 @@ public class MainController {
     }
 
     @RequestMapping("/registerimpl")
-    public String registerimpl(Model model, Adm adm
+    public String registerimpl(Model model, @Validated Adm adm, Errors errors
             ,HttpSession session) throws Exception {
+        if(errors.hasErrors()){
+            List<ObjectError> es = errors.getAllErrors();    //Adm에 담아둔 유효성검사 구현
+            String msg ="";
+            for(ObjectError e:es){
+                msg += "<h4>";
+                msg += e.getDefaultMessage();
+                msg += "</h4>";
+            }
+            throw new Exception(msg);
+        }
         try {
             adm.setPwd(encoder.encode(adm.getPwd()));  //화면에서 입력한 pwd를 가져와서 암호화 한 다음에 다시 adm 객체에 넣어서 register
             admService.register(adm);
