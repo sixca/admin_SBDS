@@ -29,6 +29,8 @@ public class Mate {
     private String name;
 
     @Size(min=4, max=10, message="PWD는 최소4개 최대10개 입니다.")
+    @Pattern(regexp ="^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$",
+            message = "Password는 특수문자를 포함한 8자리 이상이어야 합니다")
     private String password;
     private String area;
     private Integer jobPeriod;
@@ -39,8 +41,6 @@ public class Mate {
     private String valid = "N";
 
     private MultipartFile imgMate; //추가 :: img(이미지 네임)를 파일 덩어리 자체로 변환하기 위함
-
-    private int rate;
 
     public Mate(Integer id, String email, String name, String password, String area, Integer jobPeriod, String license, String img, String valid) {
         this.id = id;

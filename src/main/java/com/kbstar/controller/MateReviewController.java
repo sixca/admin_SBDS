@@ -4,7 +4,6 @@ import com.kbstar.dto.MateReview;
 import com.kbstar.service.MateReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +18,6 @@ public class MateReviewController {
     @Autowired
     MateReviewService service;
     String dir = "matereview/";
-
-    @Value("${uploadimgdir}")
-    String imgdir;
 
     @RequestMapping("/all")
     public String all(Model model) throws Exception {

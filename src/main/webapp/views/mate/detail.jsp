@@ -141,7 +141,7 @@
                                     <h6 class="mb-0">프로필 이미지 변경</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="file" name="imgMember" class="form-control" placeholder="Input img">
+                                    <input type="file" name="imgMate" class="form-control" placeholder="Input img">
                                 </div>
                             </div>
                             <div class="row">

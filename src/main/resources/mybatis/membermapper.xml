@@ -10,7 +10,7 @@
         SELECT * FROM member
     </select>
     <insert id="insert" parameterType="member">
-        INSERT INTO member VALUES (#{id},#{email},#{name},#{password},#{birth},#{tel},#{addr},#{img},#{valid})
+        INSERT INTO member VALUES (member_seq.NEXTVAL,#{email},#{name},#{password},#{birth},#{tel},#{addr},#{img},#{valid})
     </insert>
     <update id="update" parameterType="member">
         UPDATE member SET email=#{email},name=#{name},password=#{password}, birth=#{birth}, tel=#{tel}, addr=#{addr}, img=#{img}, valid=#{valid} WHERE id=#{id}

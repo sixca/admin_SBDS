@@ -4,6 +4,7 @@
         <h1 class="page-header">
             간병인 관리
         </h1>
+        <a href="/mate/add" class="btn-floating btn-large right"><i class="material-icons">add</i></a>
     </div>
 
     <div id="page-inner">
@@ -18,7 +19,7 @@
                                 <img class="card-img" src="/uimg/${obj.img}" alt="Card Image" style="border-radius: 50%;">
                             </div>
                             <span class="card-title">${obj.name}</span>
-                            <p class="card-title" style="font-size: 12px; color:darkorange; text-align: right; font-weight: bold;">평균 평점 : ${rlist[status.index].rate}점</p>
+                            <p class="card-title" style="font-size: 13px; color:darkorange; text-align: right; font-weight: bold;">평균 평점 : ${rlist[status.index].rate}점</p>
                             <p>${obj.jobPeriod}년 경력 / ${obj.license} / ${obj.area}</p>
                         </div>
                         <div class="card-action">
@@ -36,6 +37,16 @@
 <!-- /. PAGE WRAPPER -->
 
 <style>
+
+    .header{
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-floating{
+
+    }
+
     .card {
         height: 100%;
         display: flex;

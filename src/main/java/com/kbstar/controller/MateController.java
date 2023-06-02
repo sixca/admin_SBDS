@@ -37,26 +37,30 @@ public class MateController {
     String imgdir;
 
     @RequestMapping("/add")
-    public String add(Model model){
-        model.addAttribute("center", dir+"add");
-         return "index";
-        }
+    public String add(Model model) {
+        model.addAttribute("center", dir + "add");
+        return "index";
+    }
 
     @RequestMapping("/addimpl")
-    public String addimpl(Model model, @Validated Mate mate, Errors errors) throws Exception {   //member에 문제가 생기면, errors 저장. validation
-       if(errors.hasErrors()){
-           List<ObjectError> es = errors.getAllErrors();    //Member에 담아둔(DefaultMessage) 어노테이션과 message
-           String msg ="";
-           for(ObjectError e:es){
-               msg += "<h4>";
-               msg += e.getDefaultMessage();
-               msg += "</h4>";
-           }
-           throw new Exception(msg);
-       }
-       mate.setPassword(encoder.encode(mate.getPassword()));
-       mateService.register(mate);
-       return "redirect:/member/all";
+    public String addimpl(Model model, @Validated Mate mate, Errors errors) throws Exception {   //mate에 문제가 생기면, errors 저장. validation
+        if (errors.hasErrors()) {
+            List<ObjectError> es = errors.getAllErrors();    //Mate에 담아둔(DefaultMessage) 어노테이션과 message
+            String msg = "";
+            for (ObjectError e : es) {
+                msg += "<h4>";
+                msg += e.getDefaultMessage();
+                msg += "</h4>";
+            }
+            throw new Exception(msg);
+        }
+        MultipartFile mf = mate.getImgMate();   // 파일덩어리
+        String new_imgname = mf.getOriginalFilename();   // 파일덩어리에서 이름을 꺼내온다
+        mate.setImg(new_imgname); //img 셋
+        mate.setPassword(encoder.encode(mate.getPassword()));  //password 셋
+        mateService.register(mate);
+        FileUploadUtil.saveFile(mf, imgdir); // 이미지 파일은 경로에 업로드
+        return "redirect:/mate/all";
     }
 
     @RequestMapping("/all")
@@ -69,29 +73,29 @@ public class MateController {
 
         model.addAttribute("rlist", rlist);
         model.addAttribute("mlist", list);
-        model.addAttribute("center", dir+"all");
+        model.addAttribute("center", dir + "all");
         return "index";
     }
 
     @RequestMapping("/detail")   //로그인 사용자 아이디 클릭 시 상세정보조회
     public String detail(Model model, Integer id) throws Exception {
-        Mate mate =null;
+        Mate mate = null;
         try {
             mate = mateService.get(id);
         } catch (Exception e) {
             throw new Exception("오류 :: 간병인 불러오기 실패");
         }
         model.addAttribute("mateinfo", mate);
-        model.addAttribute("center", dir+"detail");     //센터에 정보를 뿌림. 익숙해 지세요!
+        model.addAttribute("center", dir + "detail");     //센터에 정보를 뿌림. 익숙해 지세요!
         return "index";
     }
 
     @RequestMapping("/updateimpl")
     public String updateimpl(Model model, @Validated Mate mate, Errors errors) throws Exception {
-        if(errors.hasErrors()){
+        if (errors.hasErrors()) {
             List<ObjectError> es = errors.getAllErrors();    //Member에 담아둔(DefaultMessage) 어노테이션과 message
-            String msg ="";
-            for(ObjectError e:es){
+            String msg = "";
+            for (ObjectError e : es) {
                 msg += "<h4>";
                 msg += e.getDefaultMessage();
                 msg += "</h4>";
@@ -102,12 +106,12 @@ public class MateController {
         String new_imgname = mf.getOriginalFilename();   // 파일덩어리에서 이름을 꺼내온다
         if (new_imgname.equals("") || new_imgname == null) {   //이미지 지정이 따로 없으면, 기존 이미지를 그대로 쓰겠다
             mateService.modify(mate);
-        }else {
+        } else {
             mate.setImg(new_imgname); // 아니면 (새 이미지를 지정했다면) img명을 넣고
             mateService.modify(mate);  // mate 전체 업데이트
             FileUploadUtil.saveFile(mf, imgdir); // 이미지 파일은 경로에 업로드
         }
-        return "redirect:/mate/detail?id="+mate.getId();
+        return "redirect:/mate/detail?id=" + mate.getId();
     }
 
     @RequestMapping("/deleteimpl")
