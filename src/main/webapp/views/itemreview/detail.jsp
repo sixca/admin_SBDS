@@ -1,14 +1,13 @@
 ﻿<script>
     function deleteReview() {
-        location.href = "/matereview/deleteimpl?id=" + ${mreviewinfo.id};
-
+        location.href = "/itemreview/deleteimpl?id=" + ${ireviewinfo.id};
     }
 </script>
 
 <div id="page-wrapper">
     <div class="header">
         <h1 class="page-header">
-            간병인 후기 상세 <small>Mate Review Detail.</small>
+            제품 후기 상세 <small>Mate Review Detail.</small>
         </h1>
     </div>
     <div id="page-inner">
@@ -25,7 +24,7 @@
                                 <thead>
                                 <tr align="center">
                                     <th width="10%">제목</th>
-                                    <th width="60%">${mreviewinfo.content}</th>
+                                    <th width="60%">${ireviewinfo.title}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -33,22 +32,22 @@
                                     <td>작성 회원 번호
                                     </td>
                                     <td>
-                                        ${mreviewinfo.mateId}
+                                        ${ireviewinfo.memberId}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>대상 간병인 번호
+                                    <td>대상 제품 번호
                                     </td>
                                     <td>
-                                        ${mreviewinfo.memberId} <span style="float: right; font-weight: bold; color: blue;">평점 : ${mreviewinfo.rate}점</span>
+                                        ${ireviewinfo.itemId} <span style="float: right; font-weight: bold; color: blue;">평점 : ${ireviewinfo.rate}점</span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <img src="/uimg/${mreviewinfo.img}" alt="ReviewPhoto" class="rounded-circle p-1 bg-primary" width="80" style="border-radius: 50%;">
-                                    </td>
+<%--                                    <td>--%>
+<%--                                        <img src="/uimg/${ireviewinfo.img}" alt="ReviewPhoto" class="rounded-circle p-1 bg-primary" width="80" style="border-radius: 50%;">--%>
+<%--                                    </td>--%>
                                     <td colspan="2">
-                                        <p>${mreviewinfo.content}</p>
+                                        <p>${ireviewinfo.review}</p>
                                     </td>
                                 </tr>
                                 </tbody>

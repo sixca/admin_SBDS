@@ -29,7 +29,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
-
 </head>
 
 <body>
@@ -296,7 +295,7 @@
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"> 상품 관리</a>
+                            <a href="/item/productall"> 상품 관리</a>
                         </li>
                         <li>
                             <a href="#"> 쿠폰 관리</a>
@@ -328,7 +327,7 @@
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"> 공시사항 관리</a>
+                            <a href="/notice/noticeall"> 공시사항 관리</a>
                         </li>
                         <li>
                             <a href="/matereview/all"> 후기 관리</a>

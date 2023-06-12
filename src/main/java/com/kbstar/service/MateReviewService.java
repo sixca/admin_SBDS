@@ -42,6 +42,10 @@ public class MateReviewService implements SBDSService<Integer, MateReview> {
         return mapper.selectall();
     }
 
+    public List<MateReview> getByMateId(Integer mateId) throws  Exception{
+        return mapper.getByMateId(mateId);
+    }
+
     public List<MateReviewRate> mateRate(Integer mateId){
         return mapper.mateRate(mateId);
     }

@@ -1,6 +1,7 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.Mate;
+import com.kbstar.dto.MateReview;
 import com.kbstar.dto.MateReviewRate;
 import com.kbstar.service.MateReviewService;
 import com.kbstar.service.MateService;
@@ -85,6 +86,11 @@ public class MateController {
         } catch (Exception e) {
             throw new Exception("오류 :: 간병인 불러오기 실패");
         }
+
+        List<MateReview> list = null;
+        list = mateReviewService.getByMateId(id);
+        model.addAttribute("rlist", list);
+
         model.addAttribute("mateinfo", mate);
         model.addAttribute("center", dir + "detail");     //센터에 정보를 뿌림. 익숙해 지세요!
         return "index";
@@ -119,5 +125,4 @@ public class MateController {
         mateService.remove(id);
         return "redirect:/mate/all";
     }
-
 }

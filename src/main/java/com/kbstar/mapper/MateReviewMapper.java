@@ -13,4 +13,6 @@ import java.util.List;
 public interface MateReviewMapper extends SBDSMapper<Integer, MateReview> {
     List<MateReviewRate> mateRate(Integer mateId);
     List<MateReviewRate> mateRateAll();
+
+    List<MateReview> getByMateId(Integer mateId);
 }

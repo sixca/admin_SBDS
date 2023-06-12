@@ -1,7 +1,7 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.MateReview;
-import com.kbstar.service.MateReviewService;
+import com.kbstar.dto.ItemReview;
+import com.kbstar.service.ItemReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,52 +12,40 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/matereview")
-public class MateReviewController {
+@RequestMapping("/itemreview")
+public class ItemReviewController {
 
     @Autowired
-    MateReviewService service;
+    ItemReviewService service;
 
-//    @Autowired
-//    MateService MateService;
-//
-//    @Autowired
-//    MemberService MemberService;
-
-    String dir = "matereview/";
+    String dir = "itemreview/";
 
     @RequestMapping("/all")
     public String all(Model model) throws Exception {
-        List<MateReview> list = null;
+        List<ItemReview> list = null;
         list = service.get();
 
-//        List<Mate> MateList = MateService.get();
-//        List<Member> MemberList = MemberService.get();
-//
-//        model.addAttribute("MateList", MateList);
-//        model.addAttribute("MemberList", MemberList);
-
-        model.addAttribute("rlist", list);
-        model.addAttribute("center", dir+"all");
+        model.addAttribute("ilist", list);
+        model.addAttribute("center", dir + "all");
         return "index";
     }
 
     @RequestMapping("/detail")   //상세리뷰조회
     public String detail(Model model, Integer id) throws Exception {
-        MateReview mateReview =null;
+        ItemReview itemReview = null;
         try {
-            mateReview = service.get(id);
+            itemReview = service.get(id);
         } catch (Exception e) {
             throw new Exception("오류 :: 리뷰 불러오기 실패");
         }
-        model.addAttribute("mreviewinfo", mateReview);
-        model.addAttribute("center", dir+"detail");
+        model.addAttribute("ireviewinfo", itemReview);
+        model.addAttribute("center", dir + "detail");
         return "index";
     }
 
     @RequestMapping("/deleteimpl")
     public String deleteimpl(Model model, Integer id) throws Exception {
         service.remove(id);
-        return "redirect:/matereview/all";
+        return "redirect:/itemreview/all";
     }
 }

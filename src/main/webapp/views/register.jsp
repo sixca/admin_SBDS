@@ -50,7 +50,7 @@
                 let pwd = $('#pwd').val();
                 let pwd2 = $('#pwd2').val();
                 if (pwd.length < 4 || pwd.length > 10) {
-                    window.alert('비밀번호는 4글자 이상, 10글자 이하만 이용 가능합니다.');
+                    window.alert('비밀번호는 4글자 이상, 10글자 이하만 이용 가능합니다.');  //경로 알러트창 띄우기.
                     document.getElementById('pwd').value = '';
                 }
                 if (pwd != '' && pwd2 != '') {
@@ -124,13 +124,13 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input onchange="check_pw()" name="pwd" id="pwd" type="password" class="validate">
+                                    <input name="pwd" id="pwd" type="password" class="validate">
                                     <label for="pwd">Password</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input onchange="check_pw()" name="pwd2" id="pwd2" type="password" class="validate">
+                                    <input name="pwd2" id="pwd2" type="password" class="validate">
                                     <label for="pwd2">Confirm Password</label>
                                 </div>
                             </div>

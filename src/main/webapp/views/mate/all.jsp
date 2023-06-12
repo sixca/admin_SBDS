@@ -8,7 +8,6 @@
     </div>
 
     <div id="page-inner">
-
         <div class="row">
             <c:forEach var="obj" items="${mlist}" varStatus="status">
                 <div class="col-md-4 col-sm-4">

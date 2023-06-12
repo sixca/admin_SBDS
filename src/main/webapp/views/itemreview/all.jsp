@@ -20,7 +20,7 @@
                 <!-- Advanced Tables -->
                 <div class="card">
                     <div class="card-action">
-                        간병인 후기 리스트
+                        제품 후기 리스트
                     </div>
                     <div class="card-content">
                         <div class="table-responsive">
@@ -28,24 +28,22 @@
                                 <thead>
                                 <tr>
                                     <th class="center">후기 번호</th>
-                                    <th class="center">간병인 번호</th>
                                     <th class="center">회원 번호</th>
-                                    <th class="center">Image</th>
-                                    <th class="center">회원 후기</th>
+                                    <th class="center">제품 번호</th>
+                                    <th class="center">제목</th>
                                     <th class="center">평점</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="obj" items="${rlist}" varStatus="status">
-                                    <tr>
-                                        <td><a href="/matereview/detail?id=${obj.id}">${obj.id}</a></td>
-                                        <td><a href="/mate/detail?id=${obj.mateId}">${obj.mateId}</a></td>
-                                        <td><a href="/member/detail?id=${obj.memberId}">${obj.memberId}</a></td>
-                                        <td><img class="small_img" src="/uimg/${obj.img}"></td>
-                                        <td>${obj.content}</td>
-                                        <td>${obj.rate}</td>
-                                    </tr>
-                                </c:forEach>
+                                    <c:forEach var="obj" items="${ilist}">
+                                        <tr>
+                                            <td><a href="/itemreview/detail?id=${obj.id}">${obj.id}</a></td>
+                                            <td><a href="/member/detail?id=${obj.memberId}">${obj.memberId}</a></td>
+                                            <td><a href="/item/${obj.itemId}">${obj.itemId}</a></td>
+                                            <td>${obj.title}</td>
+                                            <td>${obj.rate}</td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
