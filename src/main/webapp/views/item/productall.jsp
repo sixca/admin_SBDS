@@ -7,7 +7,7 @@
         <div class="row align-items-center">
             <div class="col-lg-3 d-flex align-items-center">
                 <h1 class="page-header" style="display: inline-block; vertical-align: middle;">상품 관리</h1>
-                <a href="/item/register" class="btn-floating btn-large ml-auto"><i class="material-icons">add</i></a>
+                <a href="/item/register" class="btn-floating btn-small" style="margin-top: 20px;"><i class="material-icons">add</i></a>
             </div>
         </div>
     </div>

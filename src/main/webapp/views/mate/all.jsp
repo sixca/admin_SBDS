@@ -4,7 +4,7 @@
         <h1 class="page-header">
             간병인 관리
         </h1>
-        <a href="/mate/add" class="btn-floating btn-large right"><i class="material-icons">add</i></a>
+        <a href="/mate/add" class="btn-floating btn-small right" style="margin-top: 20px;"><i class="material-icons">add</i></a>
     </div>
 
     <div id="page-inner">

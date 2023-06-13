@@ -15,6 +15,7 @@
     <%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <!-- FontAwesome Styles-->
     <link href="/css/font-awesome.css" rel="stylesheet"/>
     <!-- Morris Chart Styles-->
@@ -298,7 +299,7 @@
                             <a href="/item/productall"> 상품 관리</a>
                         </li>
                         <li>
-                            <a href="#"> 쿠폰 관리</a>
+                            <a href="/coupon/all"> 쿠폰 관리</a>
                         </li>
                     </ul>
                 </li>
@@ -307,7 +308,7 @@
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"> 상품 주문 관리</a>
+                            <a href="/order/all"> 상품 주문 관리</a>
                         </li>
                         <li>
                             <a href="#"> 간병인 매칭 관리<span class="fa arrow"></span></a>

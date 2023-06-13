@@ -44,7 +44,6 @@
                             <div class="row">
                                 <div class="input-field col s7 d-flex justify-content-center">
                                     <input name="registerId" type="hidden" value="${loginadm.id}">
-
                                     <input class="d-none mt-5 ml-5" type="file" name="imgName" style="display: none"
                                            id="imgname">
                                     <a href="javascript:void(0);" onclick="$('#imgname').trigger('click')">
