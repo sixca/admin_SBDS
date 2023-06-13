@@ -59,6 +59,12 @@ public class MainController {
         return "index";
     }
 
+
+    @RequestMapping("/marketing")
+    public String marketing(Model model){
+        model.addAttribute("center","marketing");
+        return "index";
+    }
     @RequestMapping("/forms")
     public String forms(Model model){
         model.addAttribute("center", "form");
