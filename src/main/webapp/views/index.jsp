@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Target Material Design Bootstrap Admin Template</title>
-
+    <link href="/css/form.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection"/>
     <!-- Bootstrap Styles-->
@@ -15,7 +15,6 @@
     <%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     <!-- FontAwesome Styles-->
     <link href="/css/font-awesome.css" rel="stylesheet"/>
     <!-- Morris Chart Styles-->
@@ -23,6 +22,7 @@
     <!-- Custom Styles-->
     <link href="/css/custom-styles.css" rel="stylesheet"/>
     <!-- Google Fonts-->
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="/js/Lightweight-Chart/cssCharts.css">
 
@@ -299,7 +299,7 @@
                             <a href="/item/productall"> 상품 관리</a>
                         </li>
                         <li>
-                            <a href="/coupon/all"> 쿠폰 관리</a>
+                            <a href="#"> 쿠폰 관리</a>
                         </li>
                     </ul>
                 </li>
@@ -308,7 +308,7 @@
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/order/all"> 상품 주문 관리</a>
+                            <a href="#"> 상품 주문 관리</a>
                         </li>
                         <li>
                             <a href="#"> 간병인 매칭 관리<span class="fa arrow"></span></a>
@@ -336,7 +336,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/ui-elements" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
+                    <a href="/marketing" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 공지 및 마케팅 발송</a>
                 </li>
                 <li>
                     <a href="/chart" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
