@@ -101,7 +101,7 @@
                                 <c:forEach var="obj" items="${cpage.getList()}">
                                     <tr>
                                         <td>${obj.id}</td>
-                                        <td>${obj.memberId}</td>
+                                        <td><a href="/member/detail?id=${obj.memberId}">${obj.memberId}</td>
                                         <td>${obj.num}</td>
                                         <td>${obj.amount}</td>
                                         <td>

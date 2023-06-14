@@ -28,9 +28,9 @@ public class Mate {
     @NotEmpty(message = "NAME은 필수 항목 입니다")
     private String name;
 
-    @Size(min=4, max=10, message="PWD는 최소4개 최대10개 입니다.")
-    @Pattern(regexp ="^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$",
-            message = "Password는 특수문자를 포함한 8자리 이상이어야 합니다")
+    @Size(min=4, max=100, message="PWD는 최소4자리 수")
+//    @Pattern(regexp ="^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$",
+//            message = "Password는 특수문자를 포함한 8자리 이상이어야 합니다")
     private String password;
     private String area;
     private Integer jobPeriod;

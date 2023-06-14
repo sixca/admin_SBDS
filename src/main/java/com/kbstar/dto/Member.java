@@ -28,7 +28,7 @@ public class Member {
     @NotEmpty(message = "NAME은 필수 항목 입니다")
     private String name;
 
-    @Size(min=4, max=10, message="PWD는 최소4개 최대10개 입니다.")
+    @Size(min=4, max=100, message="PWD는 최소4자리 수")
     private String password;
     private String birth;
     private String tel;
