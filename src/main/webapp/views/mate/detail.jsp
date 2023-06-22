@@ -29,6 +29,11 @@
 </script>
 
 <div id="page-wrapper">
+    <div class="header">
+        <h1 class="page-header">
+            간병인 상세
+        </h1>
+    </div>
     <div class="main-body">
         <div class="row">
             <div class="col-lg-4">

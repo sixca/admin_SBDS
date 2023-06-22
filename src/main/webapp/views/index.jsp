@@ -299,7 +299,7 @@
                             <a href="/item/productall"> 상품 관리</a>
                         </li>
                         <li>
-                            <a href="#"> 쿠폰 관리</a>
+                            <a href="/coupon/findimpl?keyword1=id&keyword2=num&keyword3=amount&search1=&search2=&search3="> 쿠폰 관리</a>
                         </li>
                     </ul>
                 </li>
@@ -308,13 +308,13 @@
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"> 상품 주문 관리</a>
+                            <a href="/order/all"> 상품 주문 관리</a>
                         </li>
                         <li>
                             <a href="#"> 간병인 매칭 관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="#"> 매칭 리스트</a>
+                                    <a href="/matching/all"> 매칭 리스트</a>
                                 </li>
                                 <li>
                                     <a href="#"> 수수료 관리</a>

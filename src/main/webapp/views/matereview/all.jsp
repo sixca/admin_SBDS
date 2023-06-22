@@ -38,11 +38,11 @@
                                 <tbody>
                                 <c:forEach var="obj" items="${rlist}" varStatus="status">
                                     <tr>
-                                        <td><a href="/matereview/detail?id=${obj.id}">${obj.id}</a></td>
+                                        <td>${obj.id}</td>
                                         <td><a href="/mate/detail?id=${obj.mateId}">${obj.mateId}</a></td>
                                         <td><a href="/member/detail?id=${obj.memberId}">${obj.memberId}</a></td>
                                         <td><img class="small_img" src="/uimg/${obj.img}"></td>
-                                        <td>${obj.content}</td>
+                                        <td><a href="/matereview/detail?id=${obj.id}">${obj.content}</a></td>
                                         <td>${obj.rate}</td>
                                     </tr>
                                 </c:forEach>

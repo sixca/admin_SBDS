@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 
 <div id="page-wrapper">
     <div class="header">
@@ -26,10 +24,9 @@
                         메인 DashBoard
                     </div>
                     <div class="card-content">
-                        <p>관리자 일정 캘린더 / 날씨 / 신규회원 증감 추이 그래프 / 사무실 위치(본점, 지점, 물류)
+                        <p>관리자 일정 캘린더 / 날씨 / 신규회원 증감 추이 그래프 / 회사 위치(본점, 지점, 물류)
                         </p>
                         <div class="clearBoth"><br/></div>
-
                     </div>
                 </div>
             </div>

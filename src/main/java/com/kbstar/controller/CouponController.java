@@ -41,13 +41,13 @@ public class CouponController {
     @RequestMapping("/registerImpl")
     public String registerImpl(Model model, Coupon coupon) throws Exception {
         service.register(coupon);
-        return "redirect:/coupon/all";
+        return "redirect:/coupon/findimpl?keyword1=id&keyword2=num&keyword3=amount&search1=&search2=&search3=";
     }
 
     @RequestMapping("/deleteimpl")
     public String deleteimpl(int id) throws Exception {
         service.remove(id);
-        return "redirect:/coupon/all";
+        return "redirect:/coupon/findimpl?keyword1=id&keyword2=num&keyword3=amount&search1=&search2=&search3=";
     }
 
     @RequestMapping("/findimpl")

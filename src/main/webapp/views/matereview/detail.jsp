@@ -3,6 +3,11 @@
         location.href = "/matereview/deleteimpl?id=" + ${mreviewinfo.id};
 
     }
+
+    function submitComment() {
+        var comment = document.getElementById("comment").value;
+        // 댓글 등록 로직 추가
+    }
 </script>
 
 <div id="page-wrapper">
@@ -53,24 +58,64 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <table id="commentTable" class="table table-condensed"></table>
                             <table class="table table-condensed">
                                 <thead>
                                 <tr>
                                     <td>
-                                    <span style='float:right'>
-                                        <input type="button" class="btn btn-primary px-4" value="Delete" onclick="deleteReview()">
-                                        <a href="javascript:history.back()" class="btn btn-secondary px-4">Back</a>
-                                    </span>
+                                        <span style='float:right'>
+                                            <input type="button" class="btn btn-primary px-4" value="Delete" onclick="deleteReview()">
+                                            <a href="javascript:history.back()" class="btn btn-secondary px-4">Back</a>
+                                        </span>
                                     </td>
                                 </tr>
                                 </thead>
                             </table>
                         <div class="clearBoth"><br/></div>
+                        <table id="commentTable" class="table table-condensed">
+                            <thead id="replycomment">
+                            <tr>
+                                <th>작성자</th>
+                                <th>등록일자</th>
+                                <th>내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%-- DB에서 불러온 댓글 리스트를 순회하며 출력 --%>
+                            <tr>
+<%--                                <td>${comment.adminId}</td>--%>
+<%--                                <td>${comment.rdate}</td>--%>
+<%--                                <td>${comment.content}</td>--%>
+                                <td>admin0613</td>
+                                <td>2023-06-11</td>
+                                <td>소중한 후기 남겨주셔서 감사합니다.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <label for="comment">댓글 입력</label>
+                                        <textarea class="form-control" id="comment" rows="3"></textarea>
+                                    </div>
+                                    <button class="btn btn-primary px-4" onclick="submitComment()" style='float:right'>댓글 등록</button>
+                                </td>
+                            </tr>
+                            </thead>
+                        </table>
                     </div>
+
                 </div>
             </div>
             <!-- /. PAGE INNER  -->
         </div>
     </div>
 </div>
+
+<style>
+    #replycomment {
+        font-size: 9px;
+        color: blue;
+    }
+</style>

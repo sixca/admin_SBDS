@@ -37,10 +37,10 @@
                                 <tbody>
                                     <c:forEach var="obj" items="${ilist}">
                                         <tr>
-                                            <td><a href="/itemreview/detail?id=${obj.id}">${obj.id}</a></td>
+                                            <td>${obj.id}</td>
                                             <td><a href="/member/detail?id=${obj.memberId}">${obj.memberId}</a></td>
                                             <td><a href="/item/${obj.itemId}">${obj.itemId}</a></td>
-                                            <td>${obj.title}</td>
+                                            <td><a href="/itemreview/detail?id=${obj.id}">${obj.title}</a></td>
                                             <td>${obj.rate}</td>
                                         </tr>
                                     </c:forEach>
